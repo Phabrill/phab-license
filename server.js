@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 
 const PORT = 3000;
-const API_KEY = 'CHANGE_MOI_CLE_SECRETE'; // ← Change cette clé !
+const API_KEY = 'phabbase2026';
 
 app.use(cors());
 app.use(express.json());
@@ -113,7 +113,7 @@ app.get('/api/stats', checkApiKey, (req, res) => {
 // GET / — Page de statut
 app.get('/', (req, res) => {
   res.json({
-    name: 'Phab Logs Backend',
+    name: 'Pulse Logs Backend',
     version: '1.0.0',
     status: 'online',
     logs_in_memory: logs.length,
@@ -124,7 +124,7 @@ app.get('/', (req, res) => {
 
 // ── DÉMARRAGE ──────────────────────────────────────────────────────
 app.listen(PORT, () => {
-  console.log(`✅ Phab Backend démarré sur http://localhost:${PORT}`);
+  console.log(`✅ Pulse Backend démarré sur http://localhost:${PORT}`);
   console.log(`🔑 Clé API : ${API_KEY}`);
   console.log(`📋 Routes disponibles:`);
   console.log(`   POST /api/log       → Envoyer un log (FiveM)`);
